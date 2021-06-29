@@ -13,6 +13,7 @@ const ProductDetails = () => {
   let product = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchProductDetail = async (id) => {
     const response = await axios
       .get(`https://fakestoreapi.com/products/${id}`)
@@ -26,12 +27,12 @@ const ProductDetails = () => {
     return () => {
       dispatch(removeSelectedProduct());
     };
-  });
+  }, []);
 
   return (
     <div className="ui grid container">
       {Object.keys(product).length === 0 ? (
-        <div>...Loading</div>
+        <div>...Loading !</div>
       ) : (
         <div className="ui placeholder segment">
           <div className="ui two column stackable center aligned grid">
