@@ -23,11 +23,11 @@ const ProductDetails = () => {
   };
 
   useEffect(() => {
-    if (productId && productId !== "") fetchProductDetail(productId);
+   if (productId && productId !== "")  fetchProductDetail(productId);
     return () => {
       dispatch(removeSelectedProduct());
     };
-  }, []);
+  },[productId]);
 
   return (
     <div className="ui grid container">
