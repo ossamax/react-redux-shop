@@ -23,11 +23,12 @@ const ProductDetails = () => {
   };
 
   useEffect(() => {
-   if (productId && productId !== "")  fetchProductDetail(productId);
+    if (productId && productId !== "") fetchProductDetail(productId);
     return () => {
       dispatch(removeSelectedProduct());
     };
-  },[productId]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [productId]);
 
   return (
     <div className="ui grid container">

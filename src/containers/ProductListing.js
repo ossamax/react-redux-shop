@@ -18,7 +18,8 @@ const ProductListing = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ ]);
 
   return (
     <div className="ui grid container">
